@@ -27,7 +27,7 @@ CREATE TABLE SpotifyClone.usuarios (
 );
 
 
-  INSERT INTO SpotifyClone.artistas (nome_artista)
+INSERT INTO SpotifyClone.artistas (nome_artista)
 VALUES
   ('Beyoncé'),
   ('Queen'),
