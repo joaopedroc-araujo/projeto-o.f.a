@@ -72,21 +72,22 @@ CREATE TABLE SpotifyClone.cancoes (
     id_cancao INT AUTO_INCREMENT PRIMARY KEY,
     nome_cancao VARCHAR(255) NOT NULL,
     id_album INT,
+    duracao_segundos INT,
     FOREIGN KEY (id_album) REFERENCES SpotifyClone.albuns(id_album)
 );
 
-INSERT INTO SpotifyClone.cancoes (nome_cancao, id_album)
+INSERT INTO SpotifyClone.cancoes (nome_cancao, id_album, duracao_segundos)
 VALUES
-  ('Break my soul', 1),
-  ('Virgos Groove', 1),
-  ('Alien Superstar', 1),
-  ('Dont stop me now', 2),
-  ('Under Pressure', 3),
-  ('Como nossos pais', 4),
-  ('O medo de amar é o medo de ser livre', 5),
-  ('Samba em Paris', 6),
-  ('The Bards Song', 7),
-  ('Feeling Good', 8);
+  ('Break my soul', 1, 279),
+  ('Virgos Groove', 1, 369),
+  ('Alien Superstar', 1, 116),
+  ('Dont stop me now', 2, 203),
+  ('Under Pressure', 3, 152),
+  ('Como nossos pais', 4, 105),
+  ('O medo de amar é o medo de ser livre', 5, 207),
+  ('Samba em Paris', 6, 267),
+  ('The Bards Song', 7, 244),
+  ('Feeling Good', 8, 100);
 
 CREATE TABLE SpotifyClone.historico_reproducoes (
     id_usuario INT,
@@ -123,7 +124,6 @@ CREATE TABLE SpotifyClone.seguindo (
     FOREIGN KEY (id_artista) REFERENCES SpotifyClone.artistas(id_artista),
     CONSTRAINT unique_usuario_artista UNIQUE (id_usuario, id_artista)
 );
-
 
 INSERT INTO SpotifyClone.seguindo (id_usuario, id_artista)
 VALUES
